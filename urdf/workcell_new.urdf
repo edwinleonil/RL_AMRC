@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot name="objects">
+
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
+  <material name="gray">
+    <color rgba="0.5 0.5 0.5 1" />
+  </material>
+  <material name="silver">
+    <color rgba="0.75 0.75 0.75 1" />
+  </material>
+  <material name="red">
+    <color rgba="1 0 0 1" />
+  </material>
+  <material name="aqua">
+    <color rgba="0 1 1 1" />
+  </material>
+
+
+  <link name="base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="0"/>
+    </inertial> 
+  </link>
+
+  <link name="table">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.1"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="0"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.97 0.97 0.05" />
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.97 0.97 0.05" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="cabinet">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.1"/> 
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="0"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://AIN4745_RL_For_Industrial_Robotics/meshes/cabinet/cabinet_visual.STL" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="gray"/>
+    </visual>
+  </link>
+
+  <link name="basePlate">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.1"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="0"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.7 0.5 0.0254" />
+      </geometry>
+      <material name="gray" />
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.7 0.5 0.0254" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="tubeA_base">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="0"/>
+    </inertial> 
+    <visual> 
+        <geometry> 
+            <box size="0.3 0.03 0.15"/>
+        </geometry>
+        <material name="gray" />
+    </visual> 
+    <collision>
+      <geometry>
+        <box size="0.3 0.03 0.15"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="tubeA_side_a">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="0"/>
+    </inertial> 
+    <visual> 
+        <geometry> 
+            <box size="0.3 0.01 0.01"/>
+        </geometry>
+        <material name="silver" />
+    </visual> 
+    <collision>
+      <geometry>
+        <box size="0.3 0.01 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="tubeA_side_b">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="0"/>
+    </inertial> 
+    <visual> 
+        <geometry> 
+          <box size="0.3 0.01 0.01"/>
+        </geometry>
+        <material name="silver" />
+    </visual> 
+    <collision>
+      <geometry>
+        <box size="0.3 0.01 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="tubeA_top">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="0"/>
+    </inertial> 
+    <visual> 
+        <geometry> 
+          <box size="0.3 0.03 0.01"/>
+        </geometry>
+        <material name="silver" />
+    </visual> 
+    <collision>
+      <geometry>
+        <box size="0.3 0.03 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="tubeB_base">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="0"/>
+    </inertial> 
+    <visual> 
+        <geometry> 
+            <box size="0.3 0.03 0.15"/>
+        </geometry>
+        <material name="gray" />
+    </visual> 
+    <collision>
+      <geometry>
+        <box size="0.3 0.03 0.15"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="tubeB_side_a">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="0"/>
+    </inertial> 
+    <visual> 
+        <geometry> 
+            <box size="0.3 0.01 0.01"/>
+        </geometry>
+        <material name="silver" />
+    </visual> 
+    <collision>
+      <geometry>
+        <box size="0.3 0.01 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="tubeB_side_b">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="0"/>
+    </inertial> 
+    <visual> 
+        <geometry> 
+          <box size="0.3 0.01 0.01"/>
+        </geometry>
+        <material name="silver" />
+    </visual> 
+    <collision>
+      <geometry>
+        <box size="0.3 0.01 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="tubeB_top">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="0"/>
+    </inertial> 
+    <visual> 
+        <geometry> 
+          <box size="0.3 0.03 0.01"/>
+        </geometry>
+        <material name="silver" />
+    </visual> 
+    <collision>
+      <geometry>
+        <box size="0.3 0.03 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+
+
+  <joint name="base_link_to_baseplate" type="fixed">
+    <parent link="base_link" />
+    <child link="basePlate" />
+    <!--  ABB base frame base-->
+    <origin rpy="0 0 1.57079632679" xyz="0.09 0.2375  -0.0127" />
+    <!-- LB - flip table by +90 to match mounting-->
+  </joint>
+
+  <joint name="basePlate_to_table" type="fixed">
+    <parent link="basePlate" />
+    <child link="table" />
+    <origin rpy="0 0 0" xyz="-0.0005 -0.085 -0.0377" />
+  </joint>
+
+  <joint name="table_to_cabinet" type="fixed">
+    <parent link="table" />
+    <child link="cabinet" />
+    <origin rpy="1.57079632679 0 1.57079632679" xyz="-0.515 -0.515 0.025" />
+  </joint>
+
+  <joint name="baseLink_to_tubeBaseA" type="fixed">
+    <parent link="base_link" />
+    <child link="tubeA_base" />
+    <origin rpy="0 0 0" xyz="0 0.35 0" />
+  </joint>
+
+  <joint name="tubeA_base_to_tubeA_side_a" type="fixed">
+    <parent link="tubeA_base" />
+    <child link="tubeA_side_a" />
+    <origin rpy="0 0 0" xyz="0 -0.01 0.08" />
+  </joint>
+
+  <joint name="tubeA_base_to_tubeA_side_b" type="fixed">
+    <parent link="tubeA_base" />
+    <child link="tubeA_side_b" />
+    <origin rpy="0 0 0" xyz="0 0.01 0.08" />
+  </joint>
+
+  <joint name="tubeA_side_a_to_tubeA_top" type="fixed">
+    <parent link="tubeA_side_a" />
+    <child link="tubeA_top" />
+    <origin rpy="0 0 0" xyz="0 0.01 0.01" />
+  </joint>
+
+  <joint name="baseLink_to_tubeBaseB" type="fixed">
+    <parent link="base_link" />
+    <child link="tubeB_base" />
+    <origin rpy="0 0 0" xyz="0.5 0.35 0" />
+  </joint>
+
+  <joint name="tubeB_base_to_tubeB_side_a" type="fixed">
+    <parent link="tubeB_base" />
+    <child link="tubeB_side_a" />
+    <origin rpy="0 0 0" xyz="0 -0.01 0.08" />
+  </joint>
+
+  <joint name="tubeB_base_to_tubeB_side_b" type="fixed">
+    <parent link="tubeB_base" />
+    <child link="tubeB_side_b" />
+    <origin rpy="0 0 0" xyz="0 0.01 0.08" />
+  </joint>
+
+  <joint name="tubeB_side_a_to_tubeB_top" type="fixed">
+    <parent link="tubeB_side_a" />
+    <child link="tubeB_top" />
+    <origin rpy="0 0 0" xyz="0 0.01 0.01" />
+  </joint>
+
+</robot>

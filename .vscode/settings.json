@@ -1,0 +1,12 @@
+{
+    "ros.distro": "melodic",
+    "python.autoComplete.extraPaths": [
+        "C:/opt/ros/melodic/x64\\lib/site-packages"
+    ],
+    "python.linting.enabled": true,
+    "git.ignoreLimitWarning": true,
+    "python.analysis.extraPaths": [
+        "C:/opt/ros/melodic/x64\\lib/site-packages"
+    ],
+    "python.pythonPath": "rl_venv\\Scripts\\python.exe"
+}

@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot name="cable">
+
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
+  <material name="gray">
+    <color rgba="0.5 0.5 0.5 1" />
+  </material>
+  <material name="silver">
+    <color rgba="0.75 0.75 0.75 1" />
+  </material>
+  <material name="red">
+    <color rgba="1 0 0 1" />
+  </material>
+  <material name="aqua">
+    <color rgba="0 1 1 1" />
+  </material>
+  <material name="blue">
+    <color rgba="0 0 1 1" />
+  </material>
+  <material name="green">
+    <color rgba="0 0.5 0 1" />
+  </material>
+  <material name="white">
+    <color rgba="1 1 1 1" />
+  </material>
+
+  <link name="base_link">
+    <inertial>
+       <mass value="0.1"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+  </link>
+
+  <link name="rigid_cable">
+    <!-- <contact>
+      <lateral_friction value="3.0"/>
+      <rolling_friction value="0.01"/>
+      <inertia_scaling value="1.0"/>
+      <contact_cfm value="0.0"/>
+      <contact_erp value="0.0"/>
+    </contact> -->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="10"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial> 
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/rigid_cable.stl" scale="0.001 0.0005 0.001" />
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/rigid_cable.stl" scale="0.001 0.0005 0.001" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link_female_0">
+    <contact>
+      <lateral_friction value="3.0"/>
+      <rolling_friction value="1.0"/>
+      <inertia_scaling value="1.0"/>
+      <contact_cfm value="0.0"/>
+      <contact_erp value="0.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="1"/>
+       <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+				<mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/female_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/female_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <self_collide>true</self_collide>
+  </link>
+
+  <link name = "virtual_0">
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+  </link>
+
+  <link name="link_male_0">
+    <contact>
+      <lateral_friction value="3.0"/>
+      <rolling_friction value="1.0"/>
+      <inertia_scaling value="1.0"/>
+      <contact_cfm value="0.0"/>
+      <contact_erp value="0.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="1"/>
+       <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+				<mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/male_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/male_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <self_collide>true</self_collide>
+  </link>
+
+  <link name = "virtual_1">
+    <inertial>
+       <mass value="0.1"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+  </link>
+
+  <link name="link_female_1">
+    <contact>
+      <lateral_friction value="3.0"/>
+      <rolling_friction value="1.0"/>
+      <inertia_scaling value="1.0"/>
+      <contact_cfm value="0.0"/>
+      <contact_erp value="0.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="1"/>
+       <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+				<mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/female_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/female_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <self_collide>true</self_collide>
+  </link>
+
+  <link name = "virtual_2">
+    <inertial>
+       <mass value="0.1"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+  </link>
+
+  <link name="link_male_1">
+    <contact>
+      <lateral_friction value="3.0"/>
+      <rolling_friction value="1.0"/>
+      <inertia_scaling value="1.0"/>
+      <contact_cfm value="0.0"/>
+      <contact_erp value="0.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="1"/>
+       <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+				<mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/male_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/male_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <self_collide>true</self_collide>
+  </link>
+
+  <link name = "virtual_3">
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+  </link>
+
+  <link name="link_female_2">
+    <contact>
+      <lateral_friction value="3.0"/>
+      <rolling_friction value="1.0"/>
+      <inertia_scaling value="1.0"/>
+      <contact_cfm value="0.0"/>
+      <contact_erp value="0.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="1"/>
+       <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+				<mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/female_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/female_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name = "virtual_4">
+    <inertial>
+       <mass value="0.1"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+  </link>
+
+  <link name="link_male_2">
+    <contact>
+      <lateral_friction value="3.0"/>
+      <rolling_friction value="1.0"/>
+      <inertia_scaling value="1.0"/>
+      <contact_cfm value="0.0"/>
+      <contact_erp value="0.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="1"/>
+       <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+				<mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/male_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/male_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name = "virtual_5">
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+  </link>
+
+  <link name="link_female_3">
+    <contact>
+      <lateral_friction value="3.0"/>
+      <rolling_friction value="1.0"/>
+      <inertia_scaling value="1.0"/>
+      <contact_cfm value="0.0"/>
+      <contact_erp value="0.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="1"/>
+       <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+				<mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/female_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/female_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name = "virtual_6">
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+  </link>
+
+  <link name="link_male_3">
+    <contact>
+      <lateral_friction value="3.0"/>
+      <rolling_friction value="1.0"/>
+      <inertia_scaling value="1.0"/>
+      <contact_cfm value="0.0"/>
+      <contact_erp value="0.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="1"/>
+       <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+				<mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/male_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/male_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name = "virtual_7">
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+  </link>
+
+  <link name="link_female_4">
+    <contact>
+      <lateral_friction value="3.0"/>
+      <rolling_friction value="1.0"/>
+      <inertia_scaling value="1.0"/>
+      <contact_cfm value="0.0"/>
+      <contact_erp value="0.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="1"/>
+       <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+				<mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/female_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/female_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name = "virtual_8">
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+   </link>
+
+  <link name="link_male_4">
+    <contact>
+      <lateral_friction value="3.0"/>
+      <rolling_friction value="1.0"/>
+      <inertia_scaling value="1.0"/>
+      <contact_cfm value="0.0"/>
+      <contact_erp value="0.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="1"/>
+       <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+				<mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/male_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/male_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name = "virtual_9">
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+   </link>
+
+  <link name="link_female_5">
+    <contact>
+      <lateral_friction value="3.0"/>
+      <rolling_friction value="1.0"/>
+      <inertia_scaling value="1.0"/>
+      <contact_cfm value="0.0"/>
+      <contact_erp value="0.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="1"/>
+       <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+				<mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/female_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/female_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name = "virtual_10">
+    <inertial>
+       <mass value="0.1"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+  </link>
+
+  <link name="link_male_5">
+    <contact>
+      <lateral_friction value="3.0"/>
+      <rolling_friction value="1.0"/>
+      <inertia_scaling value="1.0"/>
+      <contact_cfm value="0.0"/>
+      <contact_erp value="0.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="1"/>
+       <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+				<mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/male_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/male_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name = "virtual_11">
+    <inertial>
+       <mass value="0.1"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+  </link>
+
+  <link name="link_female_6">
+    <contact>
+      <lateral_friction value="3.0"/>
+      <rolling_friction value="1.0"/>
+      <inertia_scaling value="1.0"/>
+      <contact_cfm value="0.0"/>
+      <contact_erp value="0.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="1"/>
+       <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+				<mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/female_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/female_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name = "virtual_12">
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+  </link>
+
+  <link name="link_male_6">
+    <contact>
+      <lateral_friction value="3.0"/>
+      <rolling_friction value="1.0"/>
+      <inertia_scaling value="1.0"/>
+      <contact_cfm value="0.0"/>
+      <contact_erp value="0.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="1"/>
+       <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+				<mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/male_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/male_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="end_cable">
+    <!-- <contact>
+      <lateral_friction value="3.0"/>
+      <rolling_friction value="1.0"/>
+      <inertia_scaling value="1.0"/>
+      <contact_cfm value="0.0"/>
+      <contact_erp value="0.0"/>
+    </contact> -->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="10"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial> 
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/end_cable.stl" scale="0.001 0.005 0.001" />
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://AIN4745_RL_For_Industrial_Robotics/meshes/cable_links/end_cable.stl" scale="0.001 0.005 0.001" />
+      </geometry>
+    </collision>
+  </link>
+
+
+  <joint name="base_link_to_rigid_cable" type="fixed">
+    <parent link="base_link" />
+    <child link="rigid_cable" />
+    <origin rpy="0 0 1.5708" xyz="0 0 0" />
+  </joint>
+
+  <joint name="rigid_cable_flex_cable" type="fixed">
+    <parent link="rigid_cable" />
+    <child link="link_female_0" />
+    <origin rpy="3.1406 0 0" xyz="0 0 0"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+
+  <joint name="female_0_virtua_0" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0.025 0" />
+    <axis xyz="0 0 1" />
+    <parent link="link_female_0" />
+    <child link="virtual_0" />
+    <limit lower="-0.1" upper="0.1" velocity=".2" effort="10000"/>
+    <dynamics damping="0.1" friction="1000" />
+  </joint>
+
+  <joint name="virtual_0_male_0" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <axis xyz="1 0 0" />
+    <parent link="virtual_0" />
+    <child link="link_male_0" />
+    <limit lower="-0.1" upper="0.1" velocity=".2" effort="10000"/>
+    <dynamics damping="0.1" friction="1000" />
+  </joint>
+
+  <joint name="male_0_virtual_1" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0.02 0" />
+    <axis xyz="0 0 1" />
+    <parent link="link_male_0" />
+    <child link="virtual_1" />
+    <limit lower="-0.1" upper="0.1" velocity=".2" effort="10000"/>
+    <dynamics damping="0.1" friction="1000" />
+  </joint>
+
+  <joint name="virtual_1_female_1" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <axis xyz="1 0 0" />
+    <parent link="virtual_1" />
+    <child link="link_female_1" />
+    <limit lower="-0.1" upper="0.1" velocity=".2" effort="10000"/>
+    <dynamics damping="0.1" friction="1000" />
+  </joint>
+
+  <joint name="female_1_virtual_2" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0.025 0" />
+    <axis xyz="0 0 1" />
+    <parent link="link_female_1" />
+    <child link="virtual_2" />
+    <limit lower="-0.1" upper="0.1" velocity=".2" effort="10000"/>
+    <dynamics damping="0.1" friction="1000" />
+  </joint>
+
+  <joint name="virtual_2_male_1" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <axis xyz="1 0 0" />
+    <parent link="virtual_2" />
+    <child link="link_male_1" />
+    <limit lower="-0.1" upper="0.1" velocity=".2" effort="10000"/>
+    <dynamics damping="0.1" friction="1000" />
+  </joint>
+
+  <joint name="male_1_virtual_3" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0.02 0" />
+    <axis xyz="0 0 1" />
+    <parent link="link_male_1" />
+    <child link="virtual_3" />
+    <limit lower="-0.1" upper="0.1" velocity=".2" effort="10000"/>
+    <dynamics damping="0.1" friction="1000" />
+  </joint>
+
+  <joint name="virtual_3_female_2" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <axis xyz="1 0 0" />
+    <parent link="virtual_3" />
+    <child link="link_female_2" />
+    <limit lower="-0.1" upper="0.1" velocity=".2" effort="10000"/>
+    <dynamics damping="0.1" friction="1000" />
+  </joint>
+
+  <joint name="female_2_virtual_4" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0.025 0" />
+    <axis xyz="0 0 1" />
+    <parent link="link_female_2" />
+    <child link="virtual_4" />
+    <limit lower="-0.1" upper="0.1" velocity=".2" effort="10000"/>
+    <dynamics damping="0.1" friction="1000" />
+  </joint>
+
+  <joint name="virtual_4_male_2" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <axis xyz="1 0 0" />
+    <parent link="virtual_4" />
+    <child link="link_male_2" />
+    <limit lower="-0.1" upper="0.1" velocity=".2" effort="10000"/>
+    <dynamics damping="0.1" friction="1000" />
+  </joint>
+
+  <joint name="male_2_virtual_5" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0.02 0" />
+    <axis xyz="0 0 1" />
+    <parent link="link_male_2" />
+    <child link="virtual_5" />
+    <limit lower="-0.1" upper="0.1" velocity=".2" effort="10000"/>
+    <dynamics damping="0.1" friction="1000" />
+  </joint>
+
+  <joint name="virtual_5_female_3" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <axis xyz="1 0 0" />
+    <parent link="virtual_5" />
+    <child link="link_female_3" />
+    <limit lower="-0.1" upper="0.1" velocity=".2" effort="10000"/>
+    <dynamics damping="0.1" friction="1000" />
+  </joint>
+
+  <joint name="female_3_virtual_6" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0.025 0" />
+    <axis xyz="0 0 1" />
+    <parent link="link_female_3" />
+    <child link="virtual_6" />
+    <limit lower="-0.1" upper="0.1" velocity=".2" effort="10000"/>
+    <dynamics damping="0.1" friction="1000" />
+  </joint>
+
+  <joint name="virtual_6_male_3" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <axis xyz="1 0 0" />
+    <parent link="virtual_6" />
+    <child link="link_male_3" />
+    <limit lower="-0.1" upper="0.1" velocity=".2" effort="10000"/>
+    <dynamics damping="0.1" friction="1000" />
+  </joint>
+
+  <joint name="male_3_virtual_7" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0.02 0" />
+    <axis xyz="0 0 1" />
+    <parent link="link_male_3" />
+    <child link="virtual_7" />
+    <limit lower="-0.1" upper="0.1" velocity=".2" effort="10000"/>
+    <dynamics damping="0.1" friction="1000" />
+  </joint>
+
+  <joint name="virtual_7_female_4" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <axis xyz="1 0 0" />
+    <parent link="virtual_7" />
+    <child link="link_female_4" />
+    <limit lower="-0.1" upper="0.1" velocity=".2" effort="10000"/>
+    <dynamics damping="0.1" friction="1000" />
+  </joint>
+
+  <joint name="female_4_virtual_8" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0.025 0" />
+    <axis xyz="0 0 1" />
+    <parent link="link_female_4" />
+    <child link="virtual_8" />
+    <limit lower="-0.1" upper="0.1" velocity=".2" effort="10000"/>
+    <dynamics damping="0.1" friction="1000" />
+  </joint>
+
+  <joint name="virtual_8_male_4" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <axis xyz="1 0 0" />
+    <parent link="virtual_8" />
+    <child link="link_male_4" />
+    <limit lower="-0.1" upper="0.1" velocity=".2" effort="10000"/>
+    <dynamics damping="0.1" friction="1000" />
+  </joint>
+
+  <joint name="male_4_virtual_9" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0.02 0" />
+    <axis xyz="0 0 1" />
+    <parent link="link_male_4" />
+    <child link="virtual_9" />
+    <limit lower="-0.1" upper="0.1" velocity=".2" effort="10000"/>
+    <dynamics damping="0.1" friction="1000" />
+  </joint>
+
+  <joint name="virtual_9_female_5" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <axis xyz="1 0 0" />
+    <parent link="virtual_9" />
+    <child link="link_female_5" />
+    <limit lower="-0.1" upper="0.1" velocity=".2" effort="10000"/>
+    <dynamics damping="0.1" friction="1000" />
+  </joint>
+
+  <joint name="female_5_virtual_10" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0.025 0" />
+    <axis xyz="0 0 1" />
+    <parent link="link_female_5" />
+    <child link="virtual_10" />
+    <limit lower="-0.1" upper="0.1" velocity=".2" effort="10000"/>
+    <dynamics damping="0.1" friction="1000" />
+  </joint>
+
+  <joint name="virtual_10_male_5" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <axis xyz="1 0 0" />
+    <parent link="virtual_10" />
+    <child link="link_male_5" />
+    <limit lower="-0.1" upper="0.1" velocity=".2" effort="10000"/>
+    <dynamics damping="0.1" friction="1000" />
+  </joint>
+
+  <joint name="male_5_virtual_11" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0.02 0" />
+    <axis xyz="0 0 1" />
+    <parent link="link_male_5" />
+    <child link="virtual_11" />
+    <limit lower="-0.1" upper="0.1" velocity=".2" effort="10000"/>
+    <dynamics damping="0.1" friction="1000" />
+  </joint>
+
+  <joint name="virtual_11_female_6" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <axis xyz="1 0 0" />
+    <parent link="virtual_11" />
+    <child link="link_female_6" />
+    <limit lower="-0.1" upper="0.1" velocity=".2" effort="10000"/>
+    <dynamics damping="0.1" friction="1000" />
+  </joint>
+
+  <joint name="female_6_virtual_12" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0.025 0" />
+    <axis xyz="0 0 1" />
+    <parent link="link_female_6" />
+    <child link="virtual_12" />
+    <limit lower="-0.1" upper="0.1" velocity=".2" effort="10000"/>
+    <dynamics damping="0.1" friction="1000" />
+  </joint>
+
+  <joint name="virtual_12_male_6" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <axis xyz="1 0 0" />
+    <parent link="virtual_12" />
+    <child link="link_male_6" />
+    <limit lower="-0.1" upper="0.1" velocity=".2" effort="10000"/>
+    <dynamics damping="0.1" friction="1000" />
+  </joint>
+
+  <joint name="male_6_end_cable" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0.02 0" />
+    <axis xyz="0 0 1" />
+    <parent link="link_male_6" />
+    <child link="end_cable" />
+  </joint>
+
+</robot>
